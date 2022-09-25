@@ -1,36 +1,82 @@
-<!DOCTYPE HTML>
+<!--
+Copyright 2022 yyhome-tromb
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    https://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!DOCTYPE html>
 <html lang="ja">
   <head>
-  <title>YY2000 v.0.0</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="shortcut icon" href="./media/favicon.png" type="image/png">
-  <link rel="stylesheet" href="./style/index.css">
-  <style>
-    
-    
-  </style>
+    <title>YY2000 v.0.0.1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="YY2000Player an Audio Player on Web">
+    <link rel="shortcut icon" href="./media/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <script>
+      document.onerror = (e) => alert("error : " + e);
+      if (!Audio === true) {
+        alert(
+          "あなたの端末はHTML5に対応しておらず、<audio>が扱えないため、音声を再生することが出来ません"
+        );
+      }
+    </script>
+    <style></style>
   </head>
   <body>
     <header>
-      <h1>YY2000Player v.0.0</h1>
+      <h1>YY2000Player v.0.0.1</h1>
     </header>
 
     <div id="player">
-     <div id="player_content">
-       <img src="" alt="" id="player_thumb" />
-       <canvas id="player_spectrum"></canvas>
-     </div>
+      <audio
+        src=""
+        id="audio"
+        crossorigin="use-credentials"
+        preload="metadata"
+      ></audio>
+      <div id="player_content">
+        <img src="" alt="" id="player_thumb" />
+        <canvas id="player_spectrum"></canvas>
+        <button id="play_btn">再生する</button>
+        <button id="play_next_btn">次へ</button>
+      </div>
     </div>
 
     <div id="playlist">
-      
+      <div id="playlist_top"></div>
+      <div id="playlist_items"></div>
     </div>
-    
-    
+
+    <div id="add_songs">
+      <button id="add_files_btn">ファイルを追加</button>
+      <button id="add_folder_btn">フォルダを追加</button>
+    </div>
+
+    <input
+      type="file"
+      name=""
+      id="file_picker_input"
+      multiple
+      accept="audio/*,video/*,.weba,.opus,.mka,.mkv,.3gp,.3g2"
+    />
+    <input
+      type="file"
+      name=""
+      id="folder_picker_input"
+      multiple
+      accept="audio/*,video/*,.weba,.opus,.mka,.mkv,.3gp,.3g2"
+      webkitdirectory
+    />
+
     <script src="./script/index.js"></script>
-    <script>
-      
-    </script>
+    <script></script>
   </body>
 </html>

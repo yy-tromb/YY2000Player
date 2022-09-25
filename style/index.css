@@ -1,0 +1,153 @@
+/*
+Copyright 2022 yyhome-tromb
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    https://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+html{
+   width:100%;
+   min-height: 100%;
+   max-height:100%;
+   background-color: black;
+   color: rgb(244, 126, 70);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   --theme:black;
+   --re-theme:white;
+   --content:rgb(244, 126, 70);
+   --playing:rgb(244, 180, 150);
+   --error:red;
+}
+
+*{
+   color:inherit;
+   background-color: inherit;
+}
+
+body{
+   width:95%;
+   max-width: 95%;
+   min-width: 95%;
+   height:100vh;
+   margin:auto;
+   font-size: 1.2em;
+   text-align: center;
+}
+
+h1{
+   min-width: 100%;
+   font-size:1.2em;
+   text-align: center;
+}
+
+#player{
+   display: none;
+}
+
+#player_content{
+   text-align: center;
+}
+
+#playlist,#add_songs{
+   width:100%;
+   max-height:80vh;
+   padding:12px 2px;
+   box-sizing: border-box;
+   border:6px var(--content) solid;
+}
+
+#add_songs{
+   margin:auto;
+   margin-top:10px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+   z-index: 5;
+}
+
+#playlist{
+   display: none;
+   z-index: 10;
+}
+
+#playlist_top{
+   display: none;
+}
+
+#playlist_items{
+   width:100%;
+   max-height:75vh;
+   overflow-y: scroll;
+}
+
+.playlist_item{
+   width:100%;
+   margin:0;
+   border-width: 3px 0;
+   border-color: var(--re-theme);
+   border-style: solid;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.playing{
+   background-color: var(--playing);
+}
+
+.playlist_item_title{
+   /*width:60%;*/
+   position:relative;
+}
+
+#add_files_btn,#add_folder_btn{
+   max-width:90%;
+   height:auto;
+   border:8px var(--content) ridge;
+   margin:8px;
+   font-size:2rem;
+}
+
+button:active{
+   transform:translate(2px,4px);
+}
+
+.popup{
+   /* TODO for PC or for SP */
+   width:fit-content;
+   max-width: 90vw;
+   height:fit-content;
+   max-height: 60vh;
+   padding:6px;
+   margin:auto;
+   border:3px white solid;
+   box-sizing: border-box;
+   background-color: var(--theme);
+   color:var(--content);
+   font-size:1.4rem;
+   text-align: center;
+   overflow-wrap: break-word;
+   position:fixed;
+   top:-30vh;
+   right:2.5vw;
+   left:2.5vw;
+   transition:top 0.5s ease-in-out 0ms;
+}
+
+.popup_error{
+   color:var(--error);
+}
+
+body>input[type=file]{
+   display: none;
+}
